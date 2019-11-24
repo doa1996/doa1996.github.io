@@ -71,29 +71,29 @@ function main() {
         upgrades.reliability--;
     }
     if (
-        upgrades.aero === 0.5           ||
-        upgrades.gearbox === 0.5        ||
-        upgrades.brakes === 0.5         ||
-        upgrades.electronics === 0.5    ||
-        upgrades.suspension === 0.5     ||
-        upgrades.reliability === 0.5
+        upgrades.aero == '0.5'           ||
+        upgrades.gearbox == '0.5'        ||
+        upgrades.brakes == '0.5'         ||
+        upgrades.electronics == '0.5'    ||
+        upgrades.suspension == '0.5'     ||
+        upgrades.reliability == '0.5'
     ) {
-        if (upgrades.aero === 0.5) {
+        if (upgrades.aero === '0.5') {
             cost = Number(cost) + calcOne(Number(parts.aero) - Number(factories.aero), Number(factories.aero), Number(partCostBase.aero)) / 2;
         }
-        if (upgrades.gearbox === 0.5) {
+        if (upgrades.gearbox === '0.5') {
             cost = Number(cost) + calcOne(Number(parts.gearbox) - Number(factories.gearbox), Number(factories.gearbox), Number(partCostBase.gearbox)) / 2;
         }
-        if (upgrades.brakes === 0.5) {
+        if (upgrades.brakes === '0.5') {
             cost = Number(cost) + calcOne(Number(parts.brakes) - Number(factories.brakes), Number(factories.brakes), Number(partCostBase.brakes)) / 2;
         }
-        if (upgrades.electronics === 0.5) {
+        if (upgrades.electronics === '0.5') {
             cost = Number(cost) + calcOne(Number(parts.electronics) - Number(factories.electronics), Number(factories.electronics), Number(partCostBase.electronics)) / 2;
         }
-        if (upgrades.suspension === 0.5) {
+        if (upgrades.suspension === '0.5') {
             cost = Number(cost) + calcOne(Number(parts.suspension) - Number(factories.suspension), Number(factories.suspension), Number(partCostBase.suspension)) / 2;
         }
-        if (upgrades.reliability === 0.5) {
+        if (upgrades.reliability === '0.5') {
             cost = Number(cost) + calcOne(Number(parts.reliability) - Number(factories.reliability), Number(factories.reliability), Number(partCostBase.reliability)) / 2;
         }
     }
