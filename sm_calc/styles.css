@@ -1,0 +1,59 @@
+body {
+    background-color: #eee;
+    color: #333;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+h2 {
+    margin: 12px 0 6px;
+}
+header {
+    font-size: 24px;
+    font-weight: bold;
+}
+.copyleft {
+    display: inline-block;    
+    font-weight: bold;
+    transform: rotateY(180deg);
+}
+.speedy {
+    color: #ff8228;
+    font-weight: bold;
+}
+
+.column-wrapper {
+    display: flex;
+    /* padding-bottom: 10px; */
+    width: 300px;
+}
+    .column {
+        flex: 0 0 40%;
+        line-height: 1.6em;
+    }
+    .fields {
+        flex: 1;
+    }
+input {
+    margin: 2px;
+    width: 50px;
+    /* right: 0; */
+}
+.submit {
+    padding: 4px;
+    margin-top: 12px;
+}
+
+.output-fields {
+    line-height: 1.6em;
+    font-weight: bold;
+}
+#cost {
+    color: orangered;
+    font-size: 22px;
+    font-weight: 900;    
+    margin-top: -10px;
+}

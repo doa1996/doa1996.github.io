@@ -1,0 +1,94 @@
+<head>
+    <title>Kalkulator decyzji – Ścigałka Manager</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="calc.js"></script>
+</head>
+<body>
+
+<h1>Kalkulator decyzji technicznych Ścigałka Manager</h1>
+<span class="copyleft">&copy;</span>
+<span class="speedy">Speedy Serpent</span><br>
+
+<h2>Poziomy fabryk</h2>
+<div class="column-wrapper">
+    <div class="column">
+        Aero<br>
+        Telemetria<br>
+        Elektronika<br>
+        Zawieszenie<br>
+        Jakość<br>
+    </div>
+    <div class="fields">
+        <input type="number" id='factory-aero' value="1" min="1" max="3"><br>
+        <input type="number" id='factory-telemetry' value="1" min="1" max="3"><br>
+        <input type="number" id='factory-electronics' value="1" min="1" max="3"><br>
+        <input type="number" id='factory-suspension' value="1" min="1" max="3"><br>
+        <input type="number" id='factory-quality' value="1" min="1" max="3"><br>
+    </div>
+</div>
+<h2>Stan części</h2>
+<div class="column-wrapper">
+    <div class="column">
+        Aero<br>
+        Skrzynia<br>
+        Hamulce<br>
+        Elektronika<br>
+        Zawieszenie<br>
+        Niezawodność<br>
+    </div>
+    <div class="fields">
+        <input type="number" id='aero' value="40" min="40" max="100"><br>
+        <input type="number" id='gearbox' value="40" min="40" max="100"><br>
+        <input type="number" id='brakes' value="40" min="40" max="100"><br>
+        <input type="number" id='electronics' value="40" min="40" max="100"><br>
+        <input type="number" id='suspension' value="40" min="40" max="100"><br>
+        <input type="number" id='reliability' value="40" min="40" max="100"><br>
+    </div>
+</div>
+<h2 title="0 dla degradacji; 0,5 dla utrzymania">Liczba ulepszeń &#9432;</h2>
+<div class="column-wrapper">
+    <div class="column">
+        Aero<br>
+        Skrzynia<br>
+        Hamulce<br>
+        Elektronika<br>
+        Zawieszenie<br>
+        Niezawodność<br>
+        DDR
+    </div>
+    <div class="fields">
+        <input type="number" id='upgrade-aero' value="0.5" step="0.5" min="0" max="60"><br>
+        <input type="number" id='upgrade-gearbox' value="0.5" step="0.5" min="0" max="60"><br>
+        <input type="number" id='upgrade-brakes' value="0.5" step="0.5" min="0" max="60"><br>
+        <input type="number" id='upgrade-electronics' value="0.5" step="0.5" min="0" max="60"><br>
+        <input type="number" id='upgrade-suspension' value="0.5" step="0.5" min="0" max="60"><br>
+        <input type="number" id='upgrade-reliability' value="0.5" step="0.5" min="0" max="60"><br>
+        <input type="checkbox" id="DDR"><br>
+    </div>
+</div>
+<button onclick='main()'>Oblicz</button>
+
+<div class="result">
+    <h2>Stan części po decyzji</h2>
+    <div class="column-wrapper">
+        <div class="column">
+            Aero<br>
+            Skrzynia<br>
+            Hamulce<br>
+            Elektronika<br>
+            Zawieszenie<br>
+            Niezawodność<br>
+        </div>
+        <div class="output-fields">
+            <span id="final-aero">40</span><br>
+            <span id="final-gearbox">40</span><br>
+            <span id="final-brakes">40</span><br>
+            <span id="final-electronics">40</span><br>
+            <span id="final-suspension">40</span><br>
+            <span id="final-reliability">40</span><br>
+        </div>
+    </div>
+    <h2>Koszt <span id="cost">00000</span></h2>
+</div>
+
+</body>
