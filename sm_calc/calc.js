@@ -1,5 +1,4 @@
 /* **UWAGA** Skrypt NIE sprawdza, czy wprowadzone dane mają sens w kontekście Managera; robi tylko quick-maths.*/
-//TODO rozwój bez DDR wypluwa za dużo o jedno utrzymanie sprzed podliczenia
 'use strict';
 
 const MIN_PART_VALUE = 40;
@@ -71,7 +70,6 @@ function main() {
         parts.reliability = Number(parts.reliability) + Number(factories.reliability);
         upgrades.reliability--;
     }
-    //TODO ten if jest zjebany
     if (
         upgrades.aero === 0.5           ||
         upgrades.gearbox === 0.5        ||
