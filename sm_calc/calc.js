@@ -1,4 +1,5 @@
 /* **UWAGA** Skrypt NIE sprawdza, czy wprowadzone dane mają sens w kontekście Managera; robi tylko quick-maths.*/
+//TODO rozwój bez DDR wypluwa za dużo o jedno utrzymanie sprzed podliczenia
 'use strict';
 
 const MIN_PART_VALUE = 40;
@@ -70,30 +71,31 @@ function main() {
         parts.reliability = Number(parts.reliability) + Number(factories.reliability);
         upgrades.reliability--;
     }
-    else if (
-        upgrades.aero === 0,5           ||
-        upgrades.gearbox === 0,5        ||
-        upgrades.brakes === 0,5         ||
-        upgrades.electronics === 0,5    ||
-        upgrades.suspension === 0,5     ||
-        upgrades.reliability === 0,5
+    //TODO ten if jest zjebany
+    if (
+        upgrades.aero === 0.5           ||
+        upgrades.gearbox === 0.5        ||
+        upgrades.brakes === 0.5         ||
+        upgrades.electronics === 0.5    ||
+        upgrades.suspension === 0.5     ||
+        upgrades.reliability === 0.5
     ) {
-        if (upgrades.aero === 0,5) {
+        if (upgrades.aero === 0.5) {
             cost = Number(cost) + calcOne(Number(parts.aero) - Number(factories.aero), Number(factories.aero), Number(partCostBase.aero)) / 2;
         }
-        if (upgrades.gearbox === 0,5) {
+        if (upgrades.gearbox === 0.5) {
             cost = Number(cost) + calcOne(Number(parts.gearbox) - Number(factories.gearbox), Number(factories.gearbox), Number(partCostBase.gearbox)) / 2;
         }
-        if (upgrades.brakes === 0,5) {
+        if (upgrades.brakes === 0.5) {
             cost = Number(cost) + calcOne(Number(parts.brakes) - Number(factories.brakes), Number(factories.brakes), Number(partCostBase.brakes)) / 2;
         }
-        if (upgrades.electronics === 0,5) {
+        if (upgrades.electronics === 0.5) {
             cost = Number(cost) + calcOne(Number(parts.electronics) - Number(factories.electronics), Number(factories.electronics), Number(partCostBase.electronics)) / 2;
         }
-        if (upgrades.suspension === 0,5) {
+        if (upgrades.suspension === 0.5) {
             cost = Number(cost) + calcOne(Number(parts.suspension) - Number(factories.suspension), Number(factories.suspension), Number(partCostBase.suspension)) / 2;
         }
-        if (upgrades.reliability === 0,5) {
+        if (upgrades.reliability === 0.5) {
             cost = Number(cost) + calcOne(Number(parts.reliability) - Number(factories.reliability), Number(factories.reliability), Number(partCostBase.reliability)) / 2;
         }
     }
@@ -128,6 +130,7 @@ function main() {
         parts.reliability = Number(parts.reliability) + Number(factories.reliability);
         upgrades.reliability--;
     }
+
 
     document.getElementById('final-aero').innerText = parts.aero;
     document.getElementById('final-gearbox').innerText = parts.gearbox;
