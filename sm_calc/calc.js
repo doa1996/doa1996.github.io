@@ -45,19 +45,19 @@ function main() {
     let DDR = document.getElementById('DDR').checked;
     let cost = 0;
 
-    if (DDR) {        
+    if (DDR) {
         cost = Number(cost) + calcOne(Number(parts.aero), Number(factories.aero), Number(partCostBase.aero)) / 2;
         parts.aero = Number(parts.aero) + Number(factories.aero);
         upgrades.aero--;
-        
+
         cost = Number(cost) + calcOne(Number(parts.gearbox), Number(factories.gearbox), Number(partCostBase.gearbox)) / 2;
         parts.gearbox = Number(parts.gearbox) + Number(factories.gearbox);
         upgrades.gearbox--;
-        
+
         cost = Number(cost) + calcOne(Number(parts.brakes), Number(factories.brakes), Number(partCostBase.brakes)) / 2;
         parts.brakes = Number(parts.brakes) + Number(factories.brakes);
         upgrades.brakes--;
-        
+
         cost = Number(cost) + calcOne(Number(parts.electronics), Number(factories.electronics), Number(partCostBase.electronics)) / 2;
         parts.electronics = Number(parts.electronics) + Number(factories.electronics);
         upgrades.electronics--;
@@ -65,12 +65,27 @@ function main() {
         cost = Number(cost) + calcOne(Number(parts.suspension), Number(factories.suspension), Number(partCostBase.suspension)) / 2;
         parts.suspension = Number(parts.suspension) + Number(factories.suspension);
         upgrades.suspension--;
-        
+
         cost = Number(cost) + calcOne(Number(parts.reliability), Number(factories.reliability), Number(partCostBase.reliability)) / 2;
         parts.reliability = Number(parts.reliability) + Number(factories.reliability);
         upgrades.reliability--;
     }
     if (
+        upgrades.aero == '0'           ||
+        upgrades.gearbox == '0'        ||
+        upgrades.brakes == '0'         ||
+        upgrades.electronics == '0'    ||
+        upgrades.suspension == '0'     ||
+        upgrades.reliability == '0'
+    ) {
+        if (upgrades.aero === '0')          parts.aero--;
+        if (upgrades.gearbox === '0')       parts.gearbox--;
+        if (upgrades.brakes === '0')        parts.brakes--;
+        if (upgrades.electronics === '0')   parts.electronics--;
+        if (upgrades.suspension === '0')    parts.suspension--;
+        if (upgrades.reliability === '0')   parts.reliability--;
+    }
+    else if (
         upgrades.aero == '0.5'           ||
         upgrades.gearbox == '0.5'        ||
         upgrades.brakes == '0.5'         ||
