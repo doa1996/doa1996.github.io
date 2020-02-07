@@ -85,7 +85,7 @@ function main() {
         if (upgrades.suspension === '0')    parts.suspension--;
         if (upgrades.reliability === '0')   parts.reliability--;
     }
-    else if (
+    if (
         upgrades.aero == '0.5'           ||
         upgrades.gearbox == '0.5'        ||
         upgrades.brakes == '0.5'         ||
