@@ -16,7 +16,7 @@ header {
     font-weight: bold;
 }
 .copyleft {
-    display: inline-block;    
+    display: inline-block;
     font-weight: bold;
     transform: rotateY(180deg);
 }
@@ -25,6 +25,16 @@ header {
     font-weight: bold;
 }
 
+.series {
+    display: flex;
+    flex-direction: row;
+}
+    .series input {
+        width: 20px;
+    }
+    .series span {
+        margin-right: 16px;
+    }
 .column-wrapper {
     display: flex;
     /* padding-bottom: 10px; */
@@ -54,6 +64,6 @@ input {
 #cost {
     color: orangered;
     font-size: 22px;
-    font-weight: 900;    
+    font-weight: 900;
     margin-top: -10px;
 }

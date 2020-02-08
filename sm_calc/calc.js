@@ -45,6 +45,13 @@ function main() {
     let DDR = document.getElementById('DDR').checked;
     let cost = 0;
 
+    let series = 'FS';
+    if (document.getElementById('SPS').checked) series = 'SPS';
+
+    let ceiling = 100;
+    if (series == 'FS') ceiling = 90;
+
+
     if (DDR) {
         cost = Number(cost) + calcOne(Number(parts.aero), Number(factories.aero), Number(partCostBase.aero)) / 2;
         parts.aero = Number(parts.aero) + Number(factories.aero);
@@ -117,31 +124,61 @@ function main() {
         cost = Number(cost) + calcOne(Number(parts.aero), Number(factories.aero), Number(partCostBase.aero));
         parts.aero = Number(parts.aero) + Number(factories.aero);
         upgrades.aero--;
+        if (parts.aero >= ceiling) {
+            parts.aero = ceiling;
+            if (series == 'FS') cost -= 80;
+            break;
+        }
     }
     while (upgrades.gearbox >= 1) {
         cost = Number(cost) + calcOne(Number(parts.gearbox), Number(factories.gearbox), Number(partCostBase.gearbox));
         parts.gearbox = Number(parts.gearbox) + Number(factories.gearbox);
         upgrades.gearbox--;
+        if (parts.gearbox >= ceiling) {
+            parts.gearbox = ceiling;
+            if (series == 'FS') cost -= 80;
+            break;
+        }
     }
     while (upgrades.brakes >= 1) {
         cost = Number(cost) + calcOne(Number(parts.brakes), Number(factories.brakes), Number(partCostBase.brakes));
         parts.brakes = Number(parts.brakes) + Number(factories.brakes);
         upgrades.brakes--;
+        if (parts.brakes >= ceiling) {
+            parts.brakes = ceiling;
+            if (series == 'FS') cost -= 80;
+            break;
+        }
     }
     while (upgrades.electronics >= 1) {
         cost = Number(cost) + calcOne(Number(parts.electronics), Number(factories.electronics), Number(partCostBase.electronics));
         parts.electronics = Number(parts.electronics) + Number(factories.electronics);
         upgrades.electronics--;
+        if (parts.electronics >= ceiling) {
+            parts.electronics = ceiling;
+            if (series == 'FS') cost -= 80;
+            break;
+        }
     }
     while (upgrades.suspension >= 1) {
         cost = Number(cost) + calcOne(Number(parts.suspension), Number(factories.suspension), Number(partCostBase.suspension));
         parts.suspension = Number(parts.suspension) + Number(factories.suspension);
         upgrades.suspension--;
+        if (parts.suspension >= ceiling) {
+            parts.suspension = ceiling;
+            if (series == 'FS') cost -= 80;
+            break;
+        }
     }
     while (upgrades.reliability >= 1) {
         cost = Number(cost) + calcOne(Number(parts.reliability), Number(factories.reliability), Number(partCostBase.reliability));
         parts.reliability = Number(parts.reliability) + Number(factories.reliability);
         upgrades.reliability--;
+        if (parts.reliability >= ceiling) {
+            parts.reliability = ceiling;
+            if (series == 'FS') cost -= 80;
+            break;
+        }
     }
 
 
