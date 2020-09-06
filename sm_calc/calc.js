@@ -55,32 +55,32 @@ function main() {
     if (DDR) {
         cost = Number(cost) + calcOne(Number(parts.aero), Number(factories.aero), Number(partCostBase.aero)) / 2;
         parts.aero = Number(parts.aero) + Number(factories.aero);
-        if (parts.aero >= 90) cost -= 40;
+//         if (parts.aero >= 90) cost -= 40;
         upgrades.aero--;
 
         cost = Number(cost) + calcOne(Number(parts.gearbox), Number(factories.gearbox), Number(partCostBase.gearbox)) / 2;
         parts.gearbox = Number(parts.gearbox) + Number(factories.gearbox);
-        if (parts.gearbox >= 90) cost -= 40;
+//         if (parts.gearbox >= 90) cost -= 40;
         upgrades.gearbox--;
 
         cost = Number(cost) + calcOne(Number(parts.brakes), Number(factories.brakes), Number(partCostBase.brakes)) / 2;
         parts.brakes = Number(parts.brakes) + Number(factories.brakes);
-        if (parts.brakes >= 90) cost -= 40;
+//         if (parts.brakes >= 90) cost -= 40;
         upgrades.brakes--;
 
         cost = Number(cost) + calcOne(Number(parts.electronics), Number(factories.electronics), Number(partCostBase.electronics)) / 2;
         parts.electronics = Number(parts.electronics) + Number(factories.electronics);
-        if (parts.electronics >= 90) cost -= 40;
+//         if (parts.electronics >= 90) cost -= 40;
         upgrades.electronics--;
 
         cost = Number(cost) + calcOne(Number(parts.suspension), Number(factories.suspension), Number(partCostBase.suspension)) / 2;
         parts.suspension = Number(parts.suspension) + Number(factories.suspension);
-        if (parts.suspension >= 90) cost -= 40;
+//         if (parts.suspension >= 90) cost -= 40;
         upgrades.suspension--;
 
         cost = Number(cost) + calcOne(Number(parts.reliability), Number(factories.reliability), Number(partCostBase.reliability)) / 2;
         parts.reliability = Number(parts.reliability) + Number(factories.reliability);
-        if (parts.reliability >= 90) cost -= 40;
+//         if (parts.reliability >= 90) cost -= 40;
         upgrades.reliability--;
     }
     if (
